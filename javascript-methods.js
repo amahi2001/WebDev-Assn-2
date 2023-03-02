@@ -33,6 +33,12 @@ Array.prototype.myFilter = function (callbackFn) {
 // SOME //
 Array.prototype.mySome = function (callbackFn) {
   // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i])) {
+      return true;
+    }
+  }
+  return false;
 };
 
 // EVERY //
@@ -85,3 +91,9 @@ const filter1 = arr.myFilter((x) => x > 3);
 const filter2 = arr2.myFilter((x) => x.length > 3);
 console.log(filter1);
 console.log(filter2);
+
+//testing mySome
+const some1 = arr.mySome((x) => x > 3);
+const some2 = arr2.mySome((x) => x.length > 20);
+console.log(some1);
+console.log(some2);
