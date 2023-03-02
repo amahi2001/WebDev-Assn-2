@@ -21,6 +21,13 @@ Array.prototype.myMap = function (callbackFn) {
 // FILTER //
 Array.prototype.myFilter = function (callbackFn) {
   // Place your code here.
+  let arr = [];
+  for (let i = 0; i < this.length; i++) {
+    if (callbackFn(this[i])) {
+      arr.push(this[i]);
+    }
+  }
+  return arr;
 };
 
 // SOME //
@@ -72,3 +79,9 @@ const map1 = arr.myMap((x) => x * 2);
 const map2 = arr2.myMap((x) => x.toUpperCase())
 console.log(map1);
 console.log(map2);
+
+//testing myFilter
+const filter1 = arr.myFilter((x) => x > 3);
+const filter2 = arr2.myFilter((x) => x.length > 3);
+console.log(filter1);
+console.log(filter2);
