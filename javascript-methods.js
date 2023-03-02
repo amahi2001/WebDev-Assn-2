@@ -67,6 +67,12 @@ Array.prototype.myReduce = function (callbackFn) {
 // INCLUDES //
 Array.prototype.myIncludes = function (searchElement) {
   // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === searchElement) {
+      return true;
+    }
+  }
+  return false;
 };
 
 // INDEXOF //
@@ -131,3 +137,13 @@ const reduce1 = arr.myReduce((x, y) => x + y);
 const reduce2 = arr2.myReduce((x, y) => x + "//" + y);
 console.log(reduce1);
 console.log(reduce2);
+console.log("\n");
+
+//testing myIncludes
+console.log("Testing myIncludes");
+const includes1 = arr.myIncludes(3);
+const includes2 = arr2.myIncludes("bruh");
+console.log(includes1);
+console.log(includes2);
+console.log("\n");
+
