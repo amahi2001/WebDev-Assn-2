@@ -88,6 +88,11 @@ Array.prototype.myIndexOf = function (searchElement) {
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function (searchElement) {
   // Place your code here.
+  for (let i = this.length - 1; i >= 0; i--) {
+    if (this[i] === searchElement) {
+      return i;
+    }
+  }
 };
 
 // KEYS //
@@ -158,4 +163,12 @@ const indexOf1 = arr.myIndexOf(3);
 const indexOf2 = arr2.myIndexOf("world");
 console.log(indexOf1);
 console.log(indexOf2);
+console.log("\n");
+
+//testing myLastIndexOf
+console.log("Testing myLastIndexOf");
+const lastIndexOf1 = [...arr, ...arr].myLastIndexOf(3);
+const lastIndexOf2 = [...arr2, ...arr2].myLastIndexOf("world");
+console.log(lastIndexOf1);
+console.log(lastIndexOf2);
 console.log("\n");
