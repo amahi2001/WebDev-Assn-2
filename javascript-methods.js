@@ -98,6 +98,11 @@ Array.prototype.myLastIndexOf = function (searchElement) {
 // KEYS //
 Object.myKeys = function (object) {
   // Place your code here.
+  let result = [];
+  for (const [key] of Object.entries(object)) {
+    result.push(key);
+  }
+  return result;
 };
 
 // VALUES //
@@ -108,6 +113,13 @@ Object.myValues = function (object) {
 // test array
 const arr = [1, 2, 3, 4, 5];
 const arr2 = ["hello", "world", "how", "are", "you"];
+
+//test object
+const obj = {
+  name: "John",
+  age: 30,
+  city: "New York",
+};
 
 //testing myMap
 console.log("Testing myMap");
@@ -171,4 +183,10 @@ const lastIndexOf1 = [...arr, ...arr].myLastIndexOf(3);
 const lastIndexOf2 = [...arr2, ...arr2].myLastIndexOf("world");
 console.log(lastIndexOf1);
 console.log(lastIndexOf2);
+console.log("\n");
+
+//testing myKeys
+console.log("Testing myKeys");
+const keys1 = Object.myKeys(obj);
+console.log(keys1);
 console.log("\n");
