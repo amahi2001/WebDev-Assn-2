@@ -55,6 +55,13 @@ Array.prototype.myEvery = function (callbackFn) {
 // REDUCE //
 Array.prototype.myReduce = function (callbackFn) {
   // Place your code here.
+
+  //assuming the first element is the accumulator
+  let accumulator = this[0];
+  for (let i = 1; i < this.length; i++) {
+    accumulator = callbackFn(accumulator, this[i]);
+  }
+  return accumulator;
 };
 
 // INCLUDES //
@@ -117,3 +124,10 @@ const every2 = arr2.myEvery((x) => x.length > 0);
 console.log(every1);
 console.log(every2);
 console.log("\n");
+
+//testing myReduce
+console.log("Testing myReduce");
+const reduce1 = arr.myReduce((x, y) => x + y);
+const reduce2 = arr2.myReduce((x, y) => x + "//" + y);
+console.log(reduce1);
+console.log(reduce2);
