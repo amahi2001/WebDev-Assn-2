@@ -1,5 +1,6 @@
 # CSCI 39548: Web Development
 ## Assignment 2: javascript-methods-starter-template-code
+### username: amahi2001
 
 The purpose of this assignment is to understand the following native native javascript array and object methods by recreating them:
 
