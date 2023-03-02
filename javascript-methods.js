@@ -108,6 +108,11 @@ Object.myKeys = function (object) {
 // VALUES //
 Object.myValues = function (object) {
   // Place your code here.
+  let result = [];
+  for (const [, value] of Object.entries(object)) {
+    result.push(value);
+  }
+  return result;
 };
 
 // test array
@@ -190,3 +195,8 @@ console.log("Testing myKeys");
 const keys1 = Object.myKeys(obj);
 console.log(keys1);
 console.log("\n");
+
+//testing myValues
+console.log("Testing myValues");
+const values1 = Object.myValues(obj);
+console.log(values1);
