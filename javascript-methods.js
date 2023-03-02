@@ -78,6 +78,11 @@ Array.prototype.myIncludes = function (searchElement) {
 // INDEXOF //
 Array.prototype.myIndexOf = function (searchElement) {
   // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (this[i] === searchElement) {
+      return i;
+    }
+  }
 };
 
 // LASTINDEXOF //
@@ -147,3 +152,10 @@ console.log(includes1);
 console.log(includes2);
 console.log("\n");
 
+//testing myIndexOf
+console.log("Testing myIndexOf");
+const indexOf1 = arr.myIndexOf(3);
+const indexOf2 = arr2.myIndexOf("world");
+console.log(indexOf1);
+console.log(indexOf2);
+console.log("\n");
