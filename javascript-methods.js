@@ -44,6 +44,12 @@ Array.prototype.mySome = function (callbackFn) {
 // EVERY //
 Array.prototype.myEvery = function (callbackFn) {
   // Place your code here.
+  for (let i = 0; i < this.length; i++) {
+    if (!callbackFn(this[i])) {
+      return false;
+    }
+  }
+  return true;
 };
 
 // REDUCE //
@@ -81,19 +87,33 @@ const arr = [1, 2, 3, 4, 5];
 const arr2 = ["hello", "world", "how", "are", "you"];
 
 //testing myMap
+console.log("Testing myMap");
 const map1 = arr.myMap((x) => x * 2);
-const map2 = arr2.myMap((x) => x.toUpperCase())
+const map2 = arr2.myMap((x) => x.toUpperCase());
 console.log(map1);
 console.log(map2);
+console.log("\n");
 
 //testing myFilter
+console.log("Testing myFilter");
 const filter1 = arr.myFilter((x) => x > 3);
 const filter2 = arr2.myFilter((x) => x.length > 3);
 console.log(filter1);
 console.log(filter2);
+console.log("\n");
 
 //testing mySome
+console.log("Testing mySome");
 const some1 = arr.mySome((x) => x > 3);
 const some2 = arr2.mySome((x) => x.length > 20);
 console.log(some1);
 console.log(some2);
+console.log("\n");
+
+//testing myEvery
+console.log("Testing myEvery");
+const every1 = arr.myEvery((x) => x > 0);
+const every2 = arr2.myEvery((x) => x.length > 0);
+console.log(every1);
+console.log(every2);
+console.log("\n");
